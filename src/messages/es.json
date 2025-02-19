@@ -1,0 +1,189 @@
+{
+  "navigation": {
+    "home": "Inicio",
+    "booking": "Reservar",
+    "aboutUs": "Sobre Nosotros",
+    "contact": "Contacto",
+    "faqs": "Preguntas Frecuentes",
+    "blog": "Blog",
+    "bookNow": "Reservar Ahora",
+    "language": "Idioma"
+  },
+  "booking": {
+    "title": "Reservar Ahora",
+    "description": "Asegure su viaje con solo unos clics con nuestro fácil proceso de reserva. ¡Reserve ahora y disfrute de una experiencia de viaje sin estrés!",
+    "pickupDetails": "Detalles de Recogida",
+    "pickupAddress": "Dirección de Recogida",
+    "destinationAddress": "Dirección de Destino",
+    "departureDate": "Fecha de Salida",
+    "oneWay": "Solo ida",
+    "roundtrip": "Ida y vuelta",
+    "pickupTime": "Hora de Recogida",
+    "automated": "Automatizado",
+    "manual": "Manual",
+    "automatedDescription": "Seleccione la hora automáticamente según los detalles de su vuelo",
+    "manualDescription": "Ingrese la hora de recogida manualmente según su preferencia personal",
+    "passengersAndExtras": "Pasajeros y Extras",
+    "passengers": "Pasajeros",
+    "extras": "Extras (opcional)",
+    "fillInformation": "Por favor complete la información",
+    "reviewPayment": "Revisar y Confirmar Pago",
+    "adults": "Adultos",
+    "children": "Niños",
+    "infants": "Bebés",
+    "adultsDescription": "13 años o más",
+    "childrenDescription": "2-12 años",
+    "infantsDescription": "Menores de 2 años",
+    "chooseExtras": "Elegir extras",
+    "extrasSelected": "{count} extras seleccionados",
+    "proceed": "Continuar",
+    "showDetails": "Mostrar detalles",
+    "hideDetails": "Ocultar detalles",
+    "totalPrice": "Precio Total",
+    "priceSummary": "Resumen de Precio",
+    "baseFare": "Tarifa Base",
+    "roundTripDiscount": "Descuento de Ida y Vuelta",
+    "discountAmount": "-20%",
+    "wifi": "WiFi en el Vehículo",
+    "childSeat": "Asiento para Niños",
+    "luggage": "Equipaje Adicional",
+    "pet": "Transporte de Mascotas"
+  },
+  "specialRoutes": {
+    "title": "Rutas Especiales",
+    "viewAll": "Ver Todo",
+    "save": "Ahorre",
+    "viewDetails": "Ver Detalles",
+    "routes": {
+      "airportExpress": {
+        "title": "Express al Aeropuerto",
+        "from": "Centro de la Ciudad",
+        "to": "Aeropuerto Internacional",
+        "features": ["Servicio 24/7", "Conductor Profesional", "Asistencia con Equipaje"]
+      },
+      "cityTour": {
+        "title": "Tour por la Ciudad",
+        "from": "Zona de Hoteles",
+        "to": "Atracciones Turísticas",
+        "features": ["Guía Profesional", "Vehículo Confortable", "Horario Flexible"]
+      },
+      "businessLine": {
+        "title": "Línea de Negocios",
+        "from": "Distrito Empresarial",
+        "to": "Centro de Convenciones",
+        "features": ["Garantía de Puntualidad", "Vehículo Premium", "Conductor Profesional"]
+      }
+    }
+  },
+  "popularDestinations": {
+    "title": "Destinos Populares",
+    "viewMore": "Ver Más",
+    "destinations": {
+      "museum": {
+        "name": "Museo Histórico",
+        "description": "Explore el rico patrimonio histórico y cultural de la ciudad"
+      },
+      "seaPark": {
+        "name": "Parque Marítimo",
+        "description": "Disfrute de hermosas vistas al mar y actividades de ocio"
+      },
+      "artDistrict": {
+        "name": "Distrito de Arte",
+        "description": "Experimente el arte moderno y la atmósfera cultural"
+      },
+      "shoppingMall": {
+        "name": "Centro Comercial",
+        "description": "Disfrute de una experiencia integral de compras y entretenimiento"
+      }
+    }
+  },
+  "testimonials": {
+    "title": "Reseñas de Usuarios",
+    "types": {
+      "business": "Viaje de Negocios",
+      "airport": "Traslado al Aeropuerto",
+      "cityTour": "Tour por la Ciudad"
+    }
+  },
+  "features": {
+    "premiumVehicles": {
+      "title": "Vehículos Premium",
+      "description": "Flota moderna mantenida con los más altos estándares"
+    },
+    "service": {
+      "title": "Servicio 24/7",
+      "description": "Disponible las 24 horas para sus necesidades"
+    },
+    "secureBooking": {
+      "title": "Reserva Segura",
+      "description": "Proceso de reserva seguro y confiable"
+    }
+  },
+  "about": {
+    "breadcrumb": "Sobre Nosotros",
+    "heroAlt": "Imagen Principal Sobre Nosotros",
+    "heroTitle": "Nuestra Historia",
+    "heroSubtitle": "Transformando el transporte a través de la innovación y la confiabilidad",
+    "missionTitle": "Nuestra Misión",
+    "missionText": "Proporcionar soluciones de transporte seguras, confiables e innovadoras que excedan las expectativas de nuestros clientes mientras contribuimos a un futuro sostenible.",
+    "journeyTitle": "Nuestro Viaje",
+    "timeline": [
+      {
+        "title": "Fundación de la Empresa",
+        "description": "TransportEase se estableció con la visión de revolucionar el transporte."
+      },
+      {
+        "title": "Expansión Regional",
+        "description": "Expandimos nuestros servicios para cubrir las principales ciudades de la región."
+      },
+      {
+        "title": "Integración Tecnológica",
+        "description": "Lanzamos nuestra innovadora plataforma de reservas y aplicación móvil."
+      },
+      {
+        "title": "Premio a la Excelencia en Servicio",
+        "description": "Reconocidos por nuestro excelente servicio al cliente y confiabilidad."
+      },
+      {
+        "title": "Iniciativa de Sostenibilidad",
+        "description": "Introducimos vehículos ecológicos a nuestra flota."
+      }
+    ],
+    "teamTitle": "Nuestro Equipo",
+    "team": [
+      {
+        "name": "John Smith",
+        "role": "CEO y Fundador",
+        "bio": "Más de 15 años de experiencia en la industria del transporte."
+      },
+      {
+        "name": "Sarah Johnson",
+        "role": "Directora de Operaciones",
+        "bio": "Experta en logística y excelencia en servicio al cliente."
+      },
+      {
+        "name": "Michael Chen",
+        "role": "Líder Tecnológico",
+        "bio": "Impulsando la innovación en tecnología de transporte."
+      },
+      {
+        "name": "Emma Davis",
+        "role": "Relaciones con Clientes",
+        "bio": "Dedicada a crear experiencias excepcionales para los clientes."
+      }
+    ],
+    "testimonialsTitle": "Lo que Dicen Nuestros Clientes",
+    "testimonials": [
+      {
+        "quote": "TransportEase ha transformado la forma en que manejamos nuestras necesidades de transporte. ¡Su servicio es excepcional!",
+        "author": "David Wilson",
+        "company": "Tech Solutions Inc."
+      },
+      {
+        "quote": "Confiable, profesional y siempre puntual. El mejor servicio de transporte que hemos utilizado.",
+        "author": "Lisa Anderson",
+        "company": "Global Enterprises"
+      }
+    ]
+  }
+} 

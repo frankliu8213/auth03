@@ -1,0 +1,189 @@
+{
+  "navigation": {
+    "home": "首页",
+    "booking": "预订",
+    "aboutUs": "关于我们",
+    "contact": "联系我们",
+    "faqs": "常见问题",
+    "blog": "博客",
+    "bookNow": "立即预订",
+    "language": "语言"
+  },
+  "booking": {
+    "title": "立即预订",
+    "description": "只需点击几下即可安全预订您的行程。立即预订，享受无忧的旅行体验！",
+    "pickupDetails": "接送详情",
+    "pickupAddress": "上车地点",
+    "destinationAddress": "目的地",
+    "departureDate": "出发日期",
+    "oneWay": "单程",
+    "roundtrip": "往返",
+    "pickupTime": "接送时间",
+    "automated": "自动选择",
+    "manual": "手动选择",
+    "automatedDescription": "根据您的航班信息自动选择接送时间",
+    "manualDescription": "根据您的个人偏好手动选择接送时间",
+    "passengersAndExtras": "乘客与附加服务",
+    "passengers": "乘客",
+    "extras": "附加服务（可选）",
+    "fillInformation": "请填写您的信息",
+    "reviewPayment": "确认并支付",
+    "adults": "成人",
+    "children": "儿童",
+    "infants": "婴儿",
+    "adultsDescription": "13岁及以上",
+    "childrenDescription": "2-12岁",
+    "infantsDescription": "2岁以下",
+    "chooseExtras": "选择附加服务",
+    "extrasSelected": "已选择 {count} 项服务",
+    "proceed": "继续",
+    "showDetails": "显示详情",
+    "hideDetails": "隐藏详情",
+    "totalPrice": "总价",
+    "priceSummary": "价格明细",
+    "baseFare": "基本费用",
+    "roundTripDiscount": "往返优惠",
+    "discountAmount": "-20%",
+    "wifi": "车载WiFi",
+    "childSeat": "儿童座椅",
+    "luggage": "额外行李",
+    "pet": "宠物运输"
+  },
+  "specialRoutes": {
+    "title": "特价路线",
+    "viewAll": "查看全部",
+    "save": "节省",
+    "viewDetails": "查看详情",
+    "routes": {
+      "airportExpress": {
+        "title": "机场快线",
+        "from": "市中心",
+        "to": "国际机场",
+        "features": ["24/7服务", "专业司机", "行李协助"]
+      },
+      "cityTour": {
+        "title": "城市观光",
+        "from": "酒店区",
+        "to": "旅游景点",
+        "features": ["专业导游", "舒适车辆", "灵活行程"]
+      },
+      "businessLine": {
+        "title": "商务专线",
+        "from": "商务区",
+        "to": "会展中心",
+        "features": ["准时保障", "高端车型", "专业司机"]
+      }
+    }
+  },
+  "popularDestinations": {
+    "title": "推荐景点",
+    "viewMore": "更多景点",
+    "destinations": {
+      "museum": {
+        "name": "历史博物馆",
+        "description": "探索城市丰富的历史文化遗产"
+      },
+      "seaPark": {
+        "name": "海滨公园",
+        "description": "享受美丽的海景和休闲活动"
+      },
+      "artDistrict": {
+        "name": "艺术区",
+        "description": "体验现代艺术和文化氛围"
+      },
+      "shoppingMall": {
+        "name": "购物中心",
+        "description": "享受一站式购物和娱乐体验"
+      }
+    }
+  },
+  "testimonials": {
+    "title": "用户评价",
+    "types": {
+      "business": "商务出行",
+      "airport": "机场接送",
+      "cityTour": "城市观光"
+    }
+  },
+  "features": {
+    "premiumVehicles": {
+      "title": "优质车辆",
+      "description": "现代化车队，保持最高标准"
+    },
+    "service": {
+      "title": "24/7服务",
+      "description": "全天候为您服务"
+    },
+    "secureBooking": {
+      "title": "安全预订",
+      "description": "安全可靠的预订流程"
+    }
+  },
+  "about": {
+    "breadcrumb": "关于我们",
+    "heroAlt": "关于我们主图",
+    "heroTitle": "我们的故事",
+    "heroSubtitle": "通过创新和可靠性改变交通运输",
+    "missionTitle": "我们的使命",
+    "missionText": "提供安全、可靠和创新的交通解决方案，超越客户期望，同时为可持续发展的未来做出贡献。",
+    "journeyTitle": "我们的历程",
+    "timeline": [
+      {
+        "title": "公司成立",
+        "description": "TransportEase成立，以革新交通运输为愿景。"
+      },
+      {
+        "title": "区域扩张",
+        "description": "服务范围扩展至区域内主要城市。"
+      },
+      {
+        "title": "技术整合",
+        "description": "推出创新的预订平台和移动应用。"
+      },
+      {
+        "title": "服务卓越奖",
+        "description": "因出色的客户服务和可靠性获得认可。"
+      },
+      {
+        "title": "可持续发展计划",
+        "description": "引入环保车辆到我们的车队。"
+      }
+    ],
+    "teamTitle": "我们的团队",
+    "team": [
+      {
+        "name": "约翰·史密斯",
+        "role": "首席执行官兼创始人",
+        "bio": "在交通运输行业拥有超过15年的经验。"
+      },
+      {
+        "name": "莎拉·约翰逊",
+        "role": "运营总监",
+        "bio": "物流和客户服务卓越专家。"
+      },
+      {
+        "name": "陈迈克",
+        "role": "技术主管",
+        "bio": "推动交通运输技术创新。"
+      },
+      {
+        "name": "艾玛·戴维斯",
+        "role": "客户关系主管",
+        "bio": "致力于创造卓越的客户体验。"
+      }
+    ],
+    "testimonialsTitle": "客户评价",
+    "testimonials": [
+      {
+        "quote": "TransportEase彻底改变了我们处理交通需求的方式。他们的服务非常出色！",
+        "author": "大卫·威尔逊",
+        "company": "科技解决方案公司"
+      },
+      {
+        "quote": "可靠、专业、永远准时。这是我们使用过的最好的交通服务。",
+        "author": "丽莎·安德森",
+        "company": "环球企业"
+      }
+    ]
+  }
+} 

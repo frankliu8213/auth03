@@ -1,0 +1,189 @@
+{
+  "navigation": {
+    "home": "Home",
+    "booking": "Booking",
+    "aboutUs": "About Us",
+    "contact": "Contact",
+    "faqs": "FAQs",
+    "blog": "Blog",
+    "bookNow": "Book Now",
+    "language": "Language"
+  },
+  "booking": {
+    "title": "Book Now",
+    "description": "Secure your ride in just a few clicks with our easy booking process. Book now and enjoy a stress-free travel experience!",
+    "pickupDetails": "Pickup Details",
+    "pickupAddress": "Pick Up Address",
+    "destinationAddress": "Destination Address",
+    "departureDate": "Departure Date",
+    "oneWay": "One way",
+    "roundtrip": "Roundtrip",
+    "pickupTime": "Pickup Time",
+    "automated": "Automated",
+    "manual": "Manual",
+    "automatedDescription": "Select time automatically based on your flight details",
+    "manualDescription": "Enter pickup time manually based your personal preference",
+    "passengersAndExtras": "Passengers & Extras",
+    "passengers": "Passengers",
+    "extras": "Extras (optional)",
+    "fillInformation": "Please fill in the box for your information",
+    "reviewPayment": "Review & Confirm Payment",
+    "adults": "Adults",
+    "children": "Children",
+    "infants": "Infants",
+    "adultsDescription": "Age 13 or above",
+    "childrenDescription": "Age 2-12",
+    "infantsDescription": "Under 2",
+    "chooseExtras": "Choose extras",
+    "extrasSelected": "{count} extras selected",
+    "proceed": "Proceed",
+    "showDetails": "Show details",
+    "hideDetails": "Hide details",
+    "totalPrice": "Total Price",
+    "priceSummary": "Price Summary",
+    "baseFare": "Base Fare",
+    "roundTripDiscount": "Round Trip Discount",
+    "discountAmount": "-20%",
+    "wifi": "In-car WiFi",
+    "childSeat": "Child Seat",
+    "luggage": "Extra Luggage",
+    "pet": "Pet Transport"
+  },
+  "specialRoutes": {
+    "title": "Special Routes",
+    "viewAll": "View All",
+    "save": "Save",
+    "viewDetails": "View Details",
+    "routes": {
+      "airportExpress": {
+        "title": "Airport Express",
+        "from": "City Center",
+        "to": "International Airport",
+        "features": ["24/7 Service", "Professional Driver", "Luggage Assistance"]
+      },
+      "cityTour": {
+        "title": "City Tour",
+        "from": "Hotel Area",
+        "to": "Tourist Attractions",
+        "features": ["Professional Guide", "Comfortable Vehicle", "Flexible Schedule"]
+      },
+      "businessLine": {
+        "title": "Business Line",
+        "from": "Business District",
+        "to": "Convention Center",
+        "features": ["Punctuality Guarantee", "Premium Vehicle", "Professional Driver"]
+      }
+    }
+  },
+  "popularDestinations": {
+    "title": "Popular Destinations",
+    "viewMore": "View More",
+    "destinations": {
+      "museum": {
+        "name": "History Museum",
+        "description": "Explore the city's rich historical and cultural heritage"
+      },
+      "seaPark": {
+        "name": "Seaside Park",
+        "description": "Enjoy beautiful sea views and leisure activities"
+      },
+      "artDistrict": {
+        "name": "Art District",
+        "description": "Experience modern art and cultural atmosphere"
+      },
+      "shoppingMall": {
+        "name": "Shopping Mall",
+        "description": "Enjoy one-stop shopping and entertainment experience"
+      }
+    }
+  },
+  "testimonials": {
+    "title": "User Reviews",
+    "types": {
+      "business": "Business Travel",
+      "airport": "Airport Transfer",
+      "cityTour": "City Tour"
+    }
+  },
+  "features": {
+    "premiumVehicles": {
+      "title": "Premium Vehicles",
+      "description": "Modern fleet maintained to the highest standards"
+    },
+    "service": {
+      "title": "24/7 Service",
+      "description": "Available round the clock for your needs"
+    },
+    "secureBooking": {
+      "title": "Secure Booking",
+      "description": "Safe and reliable booking process"
+    }
+  },
+  "about": {
+    "breadcrumb": "About Us",
+    "heroAlt": "About Us Hero Image",
+    "heroTitle": "Our Story",
+    "heroSubtitle": "Transforming transportation through innovation and reliability",
+    "missionTitle": "Our Mission",
+    "missionText": "To provide safe, reliable, and innovative transportation solutions that exceed our customers expectations while contributing to a sustainable future.",
+    "journeyTitle": "Our Journey",
+    "timeline": [
+      {
+        "title": "Company Founded",
+        "description": "TransportEase was established with a vision to revolutionize transportation."
+      },
+      {
+        "title": "Regional Expansion",
+        "description": "Expanded services to cover major cities in the region."
+      },
+      {
+        "title": "Technology Integration",
+        "description": "Launched our innovative booking platform and mobile app."
+      },
+      {
+        "title": "Service Excellence Award",
+        "description": "Recognized for outstanding customer service and reliability."
+      },
+      {
+        "title": "Sustainability Initiative",
+        "description": "Introduced eco-friendly vehicles to our fleet."
+      }
+    ],
+    "teamTitle": "Our Team",
+    "team": [
+      {
+        "name": "John Smith",
+        "role": "CEO & Founder",
+        "bio": "Over 15 years of experience in transportation industry."
+      },
+      {
+        "name": "Sarah Johnson",
+        "role": "Operations Director",
+        "bio": "Expert in logistics and customer service excellence."
+      },
+      {
+        "name": "Michael Chen",
+        "role": "Technology Lead",
+        "bio": "Driving innovation in transportation technology."
+      },
+      {
+        "name": "Emma Davis",
+        "role": "Customer Relations",
+        "bio": "Dedicated to creating exceptional customer experiences."
+      }
+    ],
+    "testimonialsTitle": "What Our Clients Say",
+    "testimonials": [
+      {
+        "quote": "TransportEase has transformed how we handle our transportation needs. Their service is exceptional!",
+        "author": "David Wilson",
+        "company": "Tech Solutions Inc."
+      },
+      {
+        "quote": "Reliable, professional, and always on time. The best transportation service we have ever used.",
+        "author": "Lisa Anderson",
+        "company": "Global Enterprises"
+      }
+    ]
+  }
+} 

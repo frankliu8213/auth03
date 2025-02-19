@@ -47,7 +47,18 @@
     "wifi": "车载WiFi",
     "childSeat": "儿童座椅",
     "luggage": "额外行李",
-    "pet": "宠物运输"
+    "pet": "宠物运输",
+    "returnDate": "返程日期",
+    "flightNumber": "航班号",
+    "flightNumberPlaceholder": "请输入航班号（例如：CA1234）",
+    "flightNumberDescription": "输入航班号后，我们将根据航班时间自动为您安排接送时间",
+    "pickupTimeDescription": "请选择您希望的接送时间，我们将提前15分钟到达",
+    "peakHourNotice": "高峰时段可能需要额外费用",
+    "holidayNotice": "节假日可能需要额外费用",
+    "enterAddresses": "请输入上车地点和目的地以查看路线",
+    "routeNotFound": "无法找到路线，请检查地址是否正确",
+    "estimatedDistance": "预计距离：{distance}",
+    "estimatedDuration": "预计时间：{duration}"
   },
   "specialRoutes": {
     "title": "特价路线",
@@ -59,19 +70,31 @@
         "title": "机场快线",
         "from": "市中心",
         "to": "国际机场",
-        "features": ["24/7服务", "专业司机", "行李协助"]
+        "features": {
+          "feature1": "24/7服务",
+          "feature2": "专业司机",
+          "feature3": "行李协助"
+        }
       },
       "cityTour": {
         "title": "城市观光",
         "from": "酒店区",
         "to": "旅游景点",
-        "features": ["专业导游", "舒适车辆", "灵活行程"]
+        "features": {
+          "feature1": "专业导游",
+          "feature2": "舒适车辆",
+          "feature3": "灵活行程"
+        }
       },
       "businessLine": {
         "title": "商务专线",
         "from": "商务区",
         "to": "会展中心",
-        "features": ["准时保障", "高端车型", "专业司机"]
+        "features": {
+          "feature1": "准时保障",
+          "feature2": "高端车型",
+          "feature3": "专业司机"
+        }
       }
     }
   },

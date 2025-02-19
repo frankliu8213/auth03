@@ -59,19 +59,31 @@
         "title": "Express al Aeropuerto",
         "from": "Centro de la Ciudad",
         "to": "Aeropuerto Internacional",
-        "features": ["Servicio 24/7", "Conductor Profesional", "Asistencia con Equipaje"]
+        "features": {
+          "feature1": "Servicio 24/7",
+          "feature2": "Conductor Profesional",
+          "feature3": "Asistencia con Equipaje"
+        }
       },
       "cityTour": {
         "title": "Tour por la Ciudad",
         "from": "Zona de Hoteles",
         "to": "Atracciones Turísticas",
-        "features": ["Guía Profesional", "Vehículo Confortable", "Horario Flexible"]
+        "features": {
+          "feature1": "Guía Profesional",
+          "feature2": "Vehículo Confortable",
+          "feature3": "Horario Flexible"
+        }
       },
       "businessLine": {
         "title": "Línea de Negocios",
         "from": "Distrito Empresarial",
         "to": "Centro de Convenciones",
-        "features": ["Garantía de Puntualidad", "Vehículo Premium", "Conductor Profesional"]
+        "features": {
+          "feature1": "Garantía de Puntualidad",
+          "feature2": "Vehículo Premium",
+          "feature3": "Conductor Profesional"
+        }
       }
     }
   },

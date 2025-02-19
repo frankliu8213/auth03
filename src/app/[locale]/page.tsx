@@ -16,6 +16,7 @@ import PriceSummary from "@/components/features/PriceSummary";
 import BookingProgress from "@/components/features/BookingProgress";
 import LanguageSwitcher from "@/components/features/LanguageSwitcher";
 import { specialRoutes, popularDestinations, testimonials } from '@/data';
+import MapPreview from "@/components/features/MapPreview";
 
 export default function Home() {
   const t = useTranslations();
@@ -141,10 +142,19 @@ export default function Home() {
                     </div>
                   </div>
 
+                  {/* Map Preview */}
+                  <div className="mt-4">
+                    <MapPreview
+                      pickup={booking.pickup}
+                      destination={booking.destination}
+                      className="h-[200px]"
+                    />
+                  </div>
+
                   {/* Trip Type */}
                   <div>
                     <label className="block text-sm text-gray-600 mb-2">{t('booking.departureDate')}</label>
-                    <div className="flex gap-4">
+                    <div className="flex gap-4 mb-4">
                       <button
                         onClick={() => !booking.isRoundtrip && booking.toggleRoundtrip()}
                         className={`flex-1 py-2 px-4 ${
@@ -166,42 +176,69 @@ export default function Home() {
                         {t('booking.roundtrip')}
                       </button>
                     </div>
-                  </div>
-                </div>
-              </div>
 
-              {/* Pickup Time */}
-              <div className="p-6">
-                <div className="flex justify-between items-center mb-6">
-                  <h2 className="text-xl font-semibold">{t('booking.pickupTime')}</h2>
-                  <button className="text-gray-400">
-                    <ArrowRight className="h-5 w-5" />
-                  </button>
-                </div>
+                    {/* Date Selection */}
+                    <div className="space-y-4">
+                      <div>
+                        <label className="block text-sm text-gray-600 mb-2">{t('booking.departureDate')}</label>
+                        <input
+                          type="date"
+                          value={booking.date}
+                          onChange={(e) => booking.setDate(e.target.value)}
+                          min={new Date().toISOString().split('T')[0]}
+                          className="w-full p-2 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[#6B46C1]"
+                        />
+                      </div>
+                      
+                      {booking.isRoundtrip && (
+                        <div>
+                          <label className="block text-sm text-gray-600 mb-2">{t('booking.returnDate')}</label>
+                          <input
+                            type="date"
+                            value={booking.returnDate}
+                            onChange={(e) => booking.setReturnDate(e.target.value)}
+                            min={booking.date || new Date().toISOString().split('T')[0]}
+                            className="w-full p-2 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[#6B46C1]"
+                          />
+                        </div>
+                      )}
+                    </div>
+                  </div>
 
-                <div className="grid grid-cols-2 gap-4">
-                  <div
-                    onClick={() => booking.setPickupTime({ isAutomated: true })}
-                    className={`p-4 rounded-md cursor-pointer border ${
-                      booking.pickupTime.isAutomated
-                        ? 'bg-[#6B46C1] bg-opacity-5 border-[#6B46C1]'
-                        : 'bg-gray-50 border-gray-200 hover:bg-gray-100'
-                    }`}
-                  >
-                    <h3 className="font-medium mb-2">{t('booking.automated')}</h3>
-                    <p className="text-sm text-gray-600">{t('booking.automatedDescription')}</p>
-                  </div>
-                  <div
-                    onClick={() => booking.setPickupTime({ isAutomated: false })}
-                    className={`p-4 rounded-md cursor-pointer border ${
-                      !booking.pickupTime.isAutomated
-                        ? 'bg-[#6B46C1] bg-opacity-5 border-[#6B46C1]'
-                        : 'bg-gray-50 border-gray-200 hover:bg-gray-100'
-                    }`}
-                  >
-                    <h3 className="font-medium mb-2">{t('booking.manual')}</h3>
-                    <p className="text-sm text-gray-600">{t('booking.manualDescription')}</p>
-                  </div>
+                  {/* Flight Number (for automated pickup) */}
+                  {booking.pickupTime.isAutomated && (
+                    <div>
+                      <label className="block text-sm text-gray-600 mb-2">{t('booking.flightNumber')}</label>
+                      <input
+                        type="text"
+                        placeholder={t('booking.flightNumberPlaceholder')}
+                        value={booking.pickupTime.flightNumber || ''}
+                        onChange={(e) => booking.setPickupTime({ 
+                          ...booking.pickupTime, 
+                          flightNumber: e.target.value 
+                        })}
+                        className="w-full p-2 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[#6B46C1]"
+                      />
+                      <p className="text-sm text-gray-500 mt-1">{t('booking.flightNumberDescription')}</p>
+                    </div>
+                  )}
+
+                  {/* Manual Time Selection */}
+                  {!booking.pickupTime.isAutomated && (
+                    <div>
+                      <label className="block text-sm text-gray-600 mb-2">{t('booking.pickupTime')}</label>
+                      <input
+                        type="time"
+                        value={booking.pickupTime.time || ''}
+                        onChange={(e) => booking.setPickupTime({ 
+                          ...booking.pickupTime, 
+                          time: e.target.value 
+                        })}
+                        className="w-full p-2 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[#6B46C1]"
+                      />
+                      <p className="text-sm text-gray-500 mt-1">{t('booking.pickupTimeDescription')}</p>
+                    </div>
+                  )}
                 </div>
               </div>
 
@@ -315,33 +352,35 @@ export default function Home() {
                   whileHover={cardHoverVariants.hover}
                   className="bg-gray-50 rounded-lg overflow-hidden border border-gray-200"
                 >
-                  <div className="relative h-48">
-                    <Image
-                      src={route.image}
-                      alt={t(`specialRoutes.routes.${route.id}.title`)}
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute top-4 right-4 bg-[#6B46C1] bg-opacity-90 text-white px-3 py-1 rounded-md text-sm">
-                      {t('specialRoutes.save')} {route.savings}
-                    </div>
-                  </div>
-                  <div className="p-4">
-                    <h3 className="font-medium mb-2">{t(`specialRoutes.routes.${route.id}.title`)}</h3>
-                    <div className="flex items-center text-gray-600 mb-3 text-sm">
-                      <MapPin className="h-4 w-4 mr-2" />
-                      <span>{t(`specialRoutes.routes.${route.id}.from`)} → {t(`specialRoutes.routes.${route.id}.to`)}</span>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <span className="text-sm text-gray-500 line-through">¥{route.originalPrice}</span>
-                        <span className="text-lg font-semibold text-[#6B46C1] ml-2">¥{route.discountPrice}</span>
+                  <Link href={`/routes/${route.id}`} className="block">
+                    <div className="relative h-48">
+                      <Image
+                        src={route.image}
+                        alt={t(`specialRoutes.routes.${route.id}.title`)}
+                        fill
+                        className="object-cover"
+                      />
+                      <div className="absolute top-4 right-4 bg-[#6B46C1] bg-opacity-90 text-white px-3 py-1 rounded-md text-sm">
+                        {t('specialRoutes.save')} {route.savings}
                       </div>
-                      <button className="text-[#6B46C1] hover:text-[#5a3aa1] text-sm font-medium">
-                        {t('specialRoutes.viewDetails')}
-                      </button>
                     </div>
-                  </div>
+                    <div className="p-4">
+                      <h3 className="font-medium mb-2">{t(`specialRoutes.routes.${route.id}.title`)}</h3>
+                      <div className="flex items-center text-gray-600 mb-3 text-sm">
+                        <MapPin className="h-4 w-4 mr-2" />
+                        <span>{t(`specialRoutes.routes.${route.id}.from`)} → {t(`specialRoutes.routes.${route.id}.to`)}</span>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <span className="text-sm text-gray-500 line-through">¥{route.originalPrice}</span>
+                          <span className="text-lg font-semibold text-[#6B46C1] ml-2">¥{route.discountPrice}</span>
+                        </div>
+                        <span className="text-[#6B46C1] hover:text-[#5a3aa1] text-sm font-medium">
+                          {t('specialRoutes.viewDetails')}
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
                 </motion.div>
               ))}
             </div>
@@ -374,165 +413,115 @@ export default function Home() {
                   whileHover={cardHoverVariants.hover}
                   className="bg-gray-50 rounded-lg overflow-hidden border border-gray-200"
                 >
-                  <div className="relative h-40">
-                    <Image
-                      src={destination.image}
-                      alt={t(`popularDestinations.destinations.${destination.id}.name`)}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="p-4">
-                    <h3 className="font-medium mb-2">{t(`popularDestinations.destinations.${destination.id}.name`)}</h3>
-                    <p className="text-gray-600 text-sm mb-3">{t(`popularDestinations.destinations.${destination.id}.description`)}</p>
-                    <div className="flex justify-between items-center">
-                      <div className="flex items-center text-sm">
-                        <Star className="h-4 w-4 text-yellow-400 mr-1" />
-                        <span>{destination.rating}</span>
-                        <span className="text-gray-400 ml-2">{destination.duration}</span>
-                      </div>
-                      <span className="text-[#6B46C1] font-medium">¥{destination.price}</span>
+                  <Link href={`/destinations/${destination.id}`} className="block">
+                    <div className="relative h-40">
+                      <Image
+                        src={destination.image}
+                        alt={t(`popularDestinations.destinations.${destination.id}.name`)}
+                        fill
+                        className="object-cover"
+                      />
                     </div>
-                  </div>
+                    <div className="p-4">
+                      <h3 className="font-medium mb-2">{t(`popularDestinations.destinations.${destination.id}.name`)}</h3>
+                      <p className="text-gray-600 text-sm mb-3">{t(`popularDestinations.destinations.${destination.id}.description`)}</p>
+                      <div className="flex justify-between items-center">
+                        <div className="flex items-center text-sm">
+                          <Star className="h-4 w-4 text-yellow-400 mr-1" />
+                          <span>{destination.rating}</span>
+                          <span className="text-gray-400 ml-2">{destination.duration}</span>
+                        </div>
+                        <span className="text-[#6B46C1] font-medium">¥{destination.price}</span>
+                      </div>
+                    </div>
+                  </Link>
                 </motion.div>
               ))}
             </div>
           </div>
         </motion.section>
 
-        {/* Testimonials Section */}
+        {/* Features Section */}
         <motion.section 
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="mt-8"
+          className="bg-gray-50 py-16 mt-8 border-t border-gray-200"
         >
-          <div className="bg-white rounded-lg shadow-sm p-6">
-            <div className="flex items-center justify-between mb-6">
-              <div className="flex items-center space-x-3">
-                <h2 className="text-xl font-semibold">{t('testimonials.title')}</h2>
-                <button className="text-gray-400">
-                  <ArrowRight className="h-5 w-5" />
-                </button>
-              </div>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {testimonials.map((testimonial) => (
-                <motion.div
-                  key={testimonial.id}
-                  variants={itemVariants}
-                  whileHover={cardHoverVariants.hover}
-                  className="bg-gray-50 rounded-lg p-4 border border-gray-200"
-                >
-                  <div className="flex items-center mb-4">
-                    <div className="relative w-10 h-10 mr-3">
-                      <Image
-                        src={testimonial.avatar}
-                        alt={testimonial.name}
-                        fill
-                        className="rounded-full object-cover"
-                      />
-                    </div>
-                    <div>
-                      <h3 className="font-medium text-sm">{testimonial.name}</h3>
-                      <p className="text-gray-600 text-sm">{t(`testimonials.types.${testimonial.type}`)}</p>
-                    </div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <motion.div 
+                className="text-center"
+                whileHover={{ y: -5 }}
+              >
+                <div className="relative w-16 h-16 mx-auto mb-4">
+                  <div className="absolute inset-0 bg-[#6B46C1] rounded-full opacity-10 animate-pulse"></div>
+                  <div className="relative w-16 h-16 bg-[#6B46C1] rounded-full flex items-center justify-center">
+                    <Car className="h-8 w-8 text-white" />
                   </div>
-                  <p className="text-gray-600 text-sm mb-3">{testimonial.comment}</p>
-                  <div className="flex items-center">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 text-yellow-400" />
-                    ))}
+                </div>
+                <h3 className="text-lg font-semibold mb-2">{t('features.premiumVehicles.title')}</h3>
+                <div className="flex items-center justify-center space-x-1 text-gray-600">
+                  <CheckCircle2 className="w-4 h-4 text-green-500" />
+                  <p>{t('features.premiumVehicles.description')}</p>
+                </div>
+              </motion.div>
+
+              <motion.div 
+                className="text-center"
+                whileHover={{ y: -5 }}
+              >
+                <div className="relative w-16 h-16 mx-auto mb-4">
+                  <div className="absolute inset-0 bg-[#6B46C1] rounded-full opacity-10 animate-pulse"></div>
+                  <div className="relative w-16 h-16 bg-[#6B46C1] rounded-full flex items-center justify-center">
+                    <Headphones className="h-8 w-8 text-white" />
                   </div>
-                </motion.div>
-              ))}
+                </div>
+                <h3 className="text-lg font-semibold mb-2">{t('features.service.title')}</h3>
+                <div className="flex items-center justify-center space-x-1 text-gray-600">
+                  <CheckCircle2 className="w-4 h-4 text-green-500" />
+                  <p>{t('features.service.description')}</p>
+                </div>
+              </motion.div>
+
+              <motion.div 
+                className="text-center"
+                whileHover={{ y: -5 }}
+              >
+                <div className="relative w-16 h-16 mx-auto mb-4">
+                  <div className="absolute inset-0 bg-[#6B46C1] rounded-full opacity-10 animate-pulse"></div>
+                  <div className="relative w-16 h-16 bg-[#6B46C1] rounded-full flex items-center justify-center">
+                    <Shield className="h-8 w-8 text-white" />
+                  </div>
+                </div>
+                <h3 className="text-lg font-semibold mb-2">{t('features.secureBooking.title')}</h3>
+                <div className="flex items-center justify-center space-x-1 text-gray-600">
+                  <CheckCircle2 className="w-4 h-4 text-green-500" />
+                  <p>{t('features.secureBooking.description')}</p>
+                </div>
+              </motion.div>
             </div>
           </div>
         </motion.section>
-      </div>
 
-      {/* Features Section */}
-      <motion.section 
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        className="bg-gray-50 py-16 mt-8 border-t border-gray-200"
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <motion.div 
-              className="text-center"
-              whileHover={{ y: -5 }}
-            >
-              <div className="relative w-16 h-16 mx-auto mb-4">
-                <div className="absolute inset-0 bg-[#6B46C1] rounded-full opacity-10 animate-pulse"></div>
-                <div className="relative w-16 h-16 bg-[#6B46C1] rounded-full flex items-center justify-center">
-                  <Car className="h-8 w-8 text-white" />
-                </div>
-              </div>
-              <h3 className="text-lg font-semibold mb-2">{t('features.premiumVehicles.title')}</h3>
-              <div className="flex items-center justify-center space-x-1 text-gray-600">
-                <CheckCircle2 className="w-4 h-4 text-green-500" />
-                <p>{t('features.premiumVehicles.description')}</p>
-              </div>
-            </motion.div>
-
-            <motion.div 
-              className="text-center"
-              whileHover={{ y: -5 }}
-            >
-              <div className="relative w-16 h-16 mx-auto mb-4">
-                <div className="absolute inset-0 bg-[#6B46C1] rounded-full opacity-10 animate-pulse"></div>
-                <div className="relative w-16 h-16 bg-[#6B46C1] rounded-full flex items-center justify-center">
-                  <Headphones className="h-8 w-8 text-white" />
-                </div>
-              </div>
-              <h3 className="text-lg font-semibold mb-2">{t('features.service.title')}</h3>
-              <div className="flex items-center justify-center space-x-1 text-gray-600">
-                <CheckCircle2 className="w-4 h-4 text-green-500" />
-                <p>{t('features.service.description')}</p>
-              </div>
-            </motion.div>
-
-            <motion.div 
-              className="text-center"
-              whileHover={{ y: -5 }}
-            >
-              <div className="relative w-16 h-16 mx-auto mb-4">
-                <div className="absolute inset-0 bg-[#6B46C1] rounded-full opacity-10 animate-pulse"></div>
-                <div className="relative w-16 h-16 bg-[#6B46C1] rounded-full flex items-center justify-center">
-                  <Shield className="h-8 w-8 text-white" />
-                </div>
-              </div>
-              <h3 className="text-lg font-semibold mb-2">{t('features.secureBooking.title')}</h3>
-              <div className="flex items-center justify-center space-x-1 text-gray-600">
-                <CheckCircle2 className="w-4 h-4 text-green-500" />
-                <p>{t('features.secureBooking.description')}</p>
-              </div>
-            </motion.div>
-          </div>
+        {/* Floating Action Buttons */}
+        <div className="fixed bottom-8 right-8 flex flex-col space-y-4">
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className="w-12 h-12 bg-[#6B46C1] rounded-full flex items-center justify-center text-white shadow-lg"
+          >
+            <Coffee className="w-6 h-6" />
+          </motion.button>
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className="w-12 h-12 bg-[#6B46C1] rounded-full flex items-center justify-center text-white shadow-lg"
+          >
+            <Gift className="w-6 h-6" />
+          </motion.button>
         </div>
-      </motion.section>
-
-      {/* Floating Action Buttons */}
-      <div className="fixed bottom-8 right-8 flex flex-col space-y-4">
-        <motion.button
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          className="w-12 h-12 bg-[#6B46C1] rounded-full flex items-center justify-center text-white shadow-lg"
-        >
-          <Coffee className="w-6 h-6" />
-        </motion.button>
-        <motion.button
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          className="w-12 h-12 bg-[#6B46C1] rounded-full flex items-center justify-center text-white shadow-lg"
-        >
-          <Gift className="w-6 h-6" />
-        </motion.button>
       </div>
     </div>
   );

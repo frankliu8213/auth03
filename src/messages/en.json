@@ -59,19 +59,31 @@
         "title": "Airport Express",
         "from": "City Center",
         "to": "International Airport",
-        "features": ["24/7 Service", "Professional Driver", "Luggage Assistance"]
+        "features": {
+          "feature1": "24/7 Service",
+          "feature2": "Professional Driver",
+          "feature3": "Luggage Assistance"
+        }
       },
       "cityTour": {
         "title": "City Tour",
         "from": "Hotel Area",
         "to": "Tourist Attractions",
-        "features": ["Professional Guide", "Comfortable Vehicle", "Flexible Schedule"]
+        "features": {
+          "feature1": "Professional Guide",
+          "feature2": "Comfortable Vehicle",
+          "feature3": "Flexible Schedule"
+        }
       },
       "businessLine": {
         "title": "Business Line",
         "from": "Business District",
         "to": "Convention Center",
-        "features": ["Punctuality Guarantee", "Premium Vehicle", "Professional Driver"]
+        "features": {
+          "feature1": "Punctuality Guarantee",
+          "feature2": "Premium Vehicle",
+          "feature3": "Professional Driver"
+        }
       }
     }
   },

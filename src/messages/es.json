@@ -47,7 +47,18 @@
     "wifi": "WiFi en el Vehículo",
     "childSeat": "Asiento para Niños",
     "luggage": "Equipaje Adicional",
-    "pet": "Transporte de Mascotas"
+    "pet": "Transporte de Mascotas",
+    "returnDate": "Fecha de Regreso",
+    "flightNumber": "Número de Vuelo",
+    "flightNumberPlaceholder": "Ingrese número de vuelo (ej. CA1234)",
+    "flightNumberDescription": "Ingrese su número de vuelo y programaremos automáticamente su recogida según el horario del vuelo",
+    "pickupTimeDescription": "Llegaremos 15 minutos antes de la hora seleccionada",
+    "peakHourNotice": "Se pueden aplicar cargos adicionales durante las horas pico",
+    "holidayNotice": "Se pueden aplicar cargos adicionales durante los días festivos",
+    "enterAddresses": "Ingrese las direcciones de recogida y destino para ver la ruta",
+    "routeNotFound": "Ruta no encontrada, verifique sus direcciones",
+    "estimatedDistance": "Distancia Estimada: {distance}",
+    "estimatedDuration": "Tiempo Estimado: {duration}"
   },
   "specialRoutes": {
     "title": "Rutas Especiales",

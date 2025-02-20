@@ -47,7 +47,18 @@
     "wifi": "In-car WiFi",
     "childSeat": "Child Seat",
     "luggage": "Extra Luggage",
-    "pet": "Pet Transport"
+    "pet": "Pet Transport",
+    "returnDate": "Return Date",
+    "flightNumber": "Flight Number",
+    "flightNumberPlaceholder": "Enter flight number (e.g. CA1234)",
+    "flightNumberDescription": "Enter your flight number and we'll automatically schedule your pickup based on the flight time",
+    "pickupTimeDescription": "We'll arrive 15 minutes before your selected time",
+    "peakHourNotice": "Additional charges may apply during peak hours",
+    "holidayNotice": "Additional charges may apply during holidays",
+    "enterAddresses": "Enter pickup and destination addresses to view route",
+    "routeNotFound": "Route not found, please check your addresses",
+    "estimatedDistance": "Estimated Distance: {distance}",
+    "estimatedDuration": "Estimated Time: {duration}"
   },
   "specialRoutes": {
     "title": "Special Routes",
